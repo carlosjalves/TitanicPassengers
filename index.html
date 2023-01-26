@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic Passengers</title>
+    <script type="text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+        body{
+            font-family:  Roboto, Helvetica, sans-serif;
+        }
+        .title, .subtitle, .about{
+            font-family:  "Lora", serif, serif;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 45px 320px 320px 400px 100px;
+            grid-template-rows: 100px 100px 400px 200px;
+
+            padding: 0;
+            justify-content: center;
+        }
+        .title{
+            grid-row-start: 1;
+            grid-column-start: 2;
+            margin-left: 55px;
+        }
+        .subtitle{
+            grid-row-start: 2;
+            grid-column-start: 2;
+            margin-left: 55px;
+        }
+        .ylabel{
+            grid-row-start: 3;
+            grid-column-start: 1;
+        }
+        .grid-item {
+            padding: 0;
+            width: 400px;
+            height: 400px;
+        }
+        .grid-item:nth-child(2){
+            grid-row-start: 3;
+            grid-column-start: 2;
+        }
+        .grid-item:nth-child(3){
+            grid-row-start: 3;
+            grid-column-start: 3;
+        }
+        .grid-item:nth-child(4){
+            grid-row-start: 3;
+            grid-column-start: 4;
+        }
+        .legend{
+            grid-row-start: 3;
+            grid-column-start: 5;
+        }
+        .xlabel{
+            grid-row-start: 4;
+            grid-column-start: 3;
+        }
+        .about{
+            grid-row-start: 4;
+            grid-column-start: 4;
+            font-size: 15px;
+            color: #939292;
+            text-decoration: underline black;
+            justify-self: end;
+            align-self: end;
+            margin: 0 60px 50px 0;
+        }
+        .hide-container{
+            position: relative;
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-column-start: 1;
+            grid-column-end: 6;
+            width: 100%;
+            height: 80%;
+            background-color: white;
+            display: none;
+        }
+        .hide{
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            text-align: justify;
+            padding: 0;
+            color: black;
+            top: 52%;
+            left: 43.6%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            line-height: 1.5;
+        }
+        .hide h1{
+            color: #76b6c4;
+        }
+        .about:hover + .hide-container {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid">
+
+    <div class="ylabel"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="legend"></div>
+    <div class="title"></div>
+    <div class="subtitle"></div>
+    <div class="xlabel"></div>
+    <div class="about">About</div>
+    <div class="hide-container">
+        <div class="hide">
+            <h1>About</h1>
+            <p>The aim of this project is to demonstrate the relationship between the number of deaths and survivors by age bucket, for each class of the Titanic. This data could be representative of the social discrimination that existed at the beginning of the 20th century.</p>
+            <p>It was developed for the Information Visualization subject of the Master's Degree in Design and Multimedia of the University of Coimbra, with the orientation of professors Catarina Maçãs and Evgheni Polisciuc.</p>
+            <p>Made by Carlos Alves and Maria Fonseca.</p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
